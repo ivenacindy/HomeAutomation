@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp">
+
+
+    <!-- Judul Halaman -->
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="Arial"
+        android:text="Ganti Password"
+        android:textColor="#111111"
+
+        android:textSize="30dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="83dp" />
+    <!-- Text View Password lama  -->
+    <TextView
+        android:id="@+id/text_pl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password lama : "
+        android:textColor="#111111"
+        android:textSize="20dp"
+        android:layout_marginTop="100dp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@+id/text_title"/>
+    <!-- Edit Text Password lama  -->
+    <EditText
+        android:id="@+id/input_pl"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="Masukkan kembali password baru "
+        android:inputType="textPassword"
+        android:textSize="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_pl" />
+
+    <!-- Text View Password baru  -->
+    <TextView
+        android:id="@+id/text_pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password baru"
+        android:textColor="#111111"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/input_pl"
+        tools:ignore="MissingConstraints" />
+    <!-- Edit Text Password baru  -->
+    <EditText
+        android:id="@+id/input_pb"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="Masukkan password lama"
+        android:inputType="textPassword"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/text_pb" />
+    <!-- Text View konfirmasi password baru  -->
+    <TextView
+        android:id="@+id/text_kpb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Konfirmasi password baru : "
+        android:textColor="#111111"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/input_pb"
+        tools:ignore="MissingConstraints" />
+    <!-- Edit Text konfirmasi password baru  -->
+    <EditText
+        android:id="@+id/input_kpb"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="Masukkan ulang password baru"
+        android:inputType="textPassword"
+        android:textSize="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_kpb"/>
+    <!-- Button Save -->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Simpan"
+        app:layout_constraintTop_toBottomOf="@+id/input_kpb"/>
+
+</android.support.constraint.ConstraintLayout>
