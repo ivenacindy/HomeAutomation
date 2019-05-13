@@ -84,28 +84,11 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this,"Authentification Succeded.",
                                     Toast.LENGTH_SHORT).show();
                             onLoginSuccess();
-
-//                            Intent next = new Intent(LoginActivity.this, MainActivity.class);
-//                            String message = mAuth.getUid();
-//                            next.putExtra("UID", message);
-//
-//                            startActivity(next);
-
                         }else{
                             onLoginFailed();
                         }
                     }
                 });
-
-//        new Handler().postDelayed(
-//                new Runnable() {
-//                    public void run() {
-//                        // On complete call either onLoginSuccess or onLoginFailed
-//                        onLoginSuccess();
-//                        // onLoginFailed();
-//                        progressDialog.dismiss();
-//                    }
-//                }, 3000);
     }
 
     @Override
@@ -117,6 +100,8 @@ public class LoginActivity extends AppCompatActivity {
     public void onLoginSuccess() {
         _loginButton.setEnabled(true);
         Intent home = new Intent(LoginActivity.this, MainActivity.class);
+        String message = mAuth.getUid();
+        home.putExtra("UID", message);
         startActivity(home);
         finish();
     }

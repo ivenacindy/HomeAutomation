@@ -6,14 +6,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class NotifActivity extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+
+public class SettingActivity extends AppCompatActivity {
     Switch switch1;
+    TextView logout;
+    FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notif);
+        setContentView(R.layout.activity_setting);
 
         switch1 = (Switch) findViewById(R.id.switch1);
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -26,9 +32,19 @@ public class NotifActivity extends AppCompatActivity {
                 }
             }
         });
+        mAuth = FirebaseAuth.getInstance();
+        logout = (TextView) findViewById(R.id.tv_logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Logout(v);
+            }
+        });
     }
+
     public void Logout (View view){
-        Intent intent = new Intent(NotifActivity.this, LoginActivity.class);
+        Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
+        mAuth.signOut();
         startActivity(intent);
     }
 }

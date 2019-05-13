@@ -2,17 +2,17 @@ package com.example.homeautomation;
 
 public class Room {
     private String name;
-    private int image;
+    private int status;
 
-    public Room(String name, int image) {
+    public Room(String name, int status) {
+        this.status = status;
         this.name = name;
-        this.image = image;
     }
     public String getName() {
         return name;
     }
 
-    public int getImage() {
-        return image;
+    public int getStatus() {
+        return status;
     }
 }
