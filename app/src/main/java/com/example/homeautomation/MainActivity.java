@@ -9,6 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
@@ -20,6 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.homeautomation.R.drawable.welcome;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
     public static final String Firebase_Server_URL = "https://homeautomation-a5039.firebaseio.com/";
     public static final String Database_Path = "homeautomation-a5039";
 
-    
+    Switch onoff;
+    TextView roomName;
+    ImageView imageView;
 
     public MainActivity(){}
 
@@ -45,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
 //        firebase = new Firebase(Firebase_Server_URL);
 
+        imageView = (ImageView) findViewById(R.id.imageView);
+        imageView.setImageResource(welcome);
         rvRoom = (RecyclerView) findViewById(R.id.rv_main);
         rvRoom.setHasFixedSize(true);
 
